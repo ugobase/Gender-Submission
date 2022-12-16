@@ -256,7 +256,7 @@ Gen
 
 # In[36]:
 
-
+#Histogram plot of survived
 ax = Gen['Survived'].plot(kind = 'hist', figsize = (8,6))
 ax.set_ylabel ('Next')
 ax.set_xlabel ('Band')
@@ -265,14 +265,14 @@ plt.title('Don', loc = 'right')
 
 # In[37]:
 
-
+#Alternative to previous using seaborn
 plt.figure(figsize=(12,8))
 sns.histplot(Gen.Survived)
 
 
 # In[38]:
 
-
+#Density plot of survived
 ax = Gen['Survived'].plot(kind = 'density', figsize = (8,6))
 ax.set_ylabel ('Next')
 ax.set_xlabel ('Band')
@@ -281,14 +281,14 @@ plt.title('Don', loc = 'right')
 
 # In[39]:
 
-
+#Alternative to previous using seaborn
 plt.figure(figsize=(12,8))
 sns.displot(Gen.Survived, kind = 'kde')
 
 
 # In[40]:
 
-
+#Box plot of passenger_Id
 ax = Gen['Passenger_Id'].plot(kind = 'box', figsize = (8,6))
 ax.set_ylabel ('Next')
 plt.title('Don', loc = 'right')
@@ -296,27 +296,27 @@ plt.title('Don', loc = 'right')
 
 # In[41]:
 
-
+#Box plot of survived against passenger_Id
 plt.figure(figsize=(12,8))
 sns.boxplot(data = Gen, x = 'Survived', y = 'Passenger_Id')
 
 
 # In[42]:
 
-
+#Bar chart of survived
 Gen['Survived'].value_counts().plot(kind = 'bar', figsize = (6,6))
 
 
 # In[43]:
 
-
+#Pie chart of survived
 Gen['Survived'].value_counts().plot(kind = 'pie', figsize = (6,6))
 
 
 # In[44]:
 
 
-#Counting all values of survived column and putting them into 1 and 0 rows
+#Counting all values of survived column and grouping them into 0 and 1
 Gen['Survived'].value_counts()
 
 
@@ -329,14 +329,14 @@ Gen['Survived'].unique()
 
 # In[46]:
 
-
+#Correlation of the dataset
 plt.figure(figsize = (8,6))
 sns.heatmap(Gen.corr(), annot = True, fmt = '0.1f')
 
 
 # In[47]:
 
-
+#Count plot of survived
 sns.countplot(Gen['Survived'])
 
 
